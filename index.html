@@ -578,7 +578,7 @@ section.block { padding: clamp(64px, 8vw, 112px) 0; }
 .contact dd a:hover { border-bottom-color: var(--accent); color: var(--accent); }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 28px; padding-bottom: 36px; font-size: 14px; color: var(--muted); }
 footer a { color: var(--text); }
-.float-cta { position: fixed; right: 20px; bottom: 20px; z-index: 20; box-shadow: 0 10px 30px rgba(17,19,24,.18); transform: translateY(140%); opacity: 0; transition: transform .5s cubic-bezier(.2,.7,.2,1), opacity .5s ease; }
+.float-cta { position: fixed; left: 20px; bottom: 20px; z-index: 20; box-shadow: 0 10px 30px rgba(17,19,24,.18); transform: translateY(140%); opacity: 0; transition: transform .5s cubic-bezier(.2,.7,.2,1), opacity .5s ease; }
 .float-cta.show { transform: none; opacity: 1; }
 body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has(.mnav.open) .float-cta, body:has(.nav.open) .float-cta { transform: translateY(140%); opacity: 0; pointer-events: none; }
 
