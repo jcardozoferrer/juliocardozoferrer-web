@@ -616,6 +616,29 @@ footer a { color: var(--text); }
 body:has(.fw-panel.open) .wa-float, body:has(.vmodal.open) .wa-float, body:has(.mnav.open) .wa-float { opacity: 0; pointer-events: none; }
 body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has(.mnav.open) .float-cta, body:has(.nav.open) .float-cta { transform: translateY(140%); opacity: 0; pointer-events: none; }
 
+.m-name { display: none; }
+@media (max-width: 760px) {
+  .hero { padding-top: 14px; padding-bottom: 48px; }
+  .hero .wrap { gap: 18px; }
+  .hero .portrait { order: -1; margin: 0; }
+  .hero .portrait img { aspect-ratio: 4 / 4.2 !important; object-position: 50% 12% !important; }
+  .hero .portrait .ph::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(to top, rgba(10,16,36,.88), rgba(10,16,36,0)); border-radius: 0 0 var(--r) var(--r); pointer-events: none; }
+  .hero .portrait .ph { position: relative; }
+  .m-name { display: block; position: absolute; left: 20px; right: 20px; bottom: 18px; z-index: 3; color: #fff; }
+  .m-name span { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #a9d4f2; margin-bottom: 6px; }
+  .m-name b { display: block; font-size: 40px; line-height: 1; font-weight: 600; letter-spacing: -.02em; }
+  .hero .eyebrow, .hero h1, .hero .lead, .chips-row { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .hero .badge { width: 74px; height: 74px; top: 12px; right: 12px; }
+  .hero .role { margin-top: 0; font-size: 21px; line-height: 1.3; }
+  .what { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+  .what li { flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px; }
+  .what i { width: 34px; height: 34px; border-radius: 9px; }
+  .what svg { width: 18px; height: 18px; }
+  .what b { font-size: 13.5px; line-height: 1.2; }
+  .what span { display: none; }
+  .hero .actions { margin-top: 18px; }
+}
+
 /* Entradas al hacer scroll */
 .js .hero h1 .w { animation: wordIn .9s cubic-bezier(.2,.7,.2,1) both; }
 .js .hero h1 .w:nth-child(2) { animation-delay: .1s; } .js .hero h1 .w:nth-child(3) { animation-delay: .2s; }
@@ -728,11 +751,11 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
     <div>
       <p class="eyebrow">Consultor en estrategia y transformación comercial</p>
       <h1 id="nombre"><span class="w">Julio</span> <span class="w nb">Cardozo Ferrer</span></h1>
-      <p class="role">Hago que las empresas de consumo masivo <strong>vendan más con lo que ya tienen</strong>: ordeno cómo llegan al mercado, cómo ejecutan en el punto de venta y cómo trabajan sus equipos.</p>
+      <p class="role">Hago que las empresas de consumo masivo <strong>vendan más con lo que ya tienen</strong>.</p>
       <ul class="what" aria-label="Qué hago">
         <li><i><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 4 8-8"/><path d="M15 8h5v5"/></svg></i><div><b>Route to Market</b><span>Canales y distribuidores que llegan a más clientes</span></div></li>
         <li><i><svg viewBox="0 0 24 24"><path d="M4 7h16l-1.5 9h-13z"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg></i><div><b>Trade Marketing</b><span>Ganar en la góndola y en el punto de venta</span></div></li>
-        <li><i><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c.5-3.5 3-5.5 6-5.5s5.5 2 6 5.5M14.5 20c.3-2.3 1.6-3.8 3.5-3.8s3 1.5 3.5 3.8"/></svg></i><div><b>Reestructuración comercial</b><span>Equipos, procesos y metas que se sostienen</span></div></li>
+        <li><i><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c.5-3.5 3-5.5 6-5.5s5.5 2 6 5.5M14.5 20c.3-2.3 1.6-3.8 3.5-3.8s3 1.5 3.5 3.8"/></svg></i><div><b>Reestruc&shy;turación comercial</b><span>Equipos, procesos y metas que se sostienen</span></div></li>
       </ul>
       <p class="lead">Fundador y director de <strong>STM LATAM</strong>, con proyectos en multinacionales, pymes y distribuidoras de <strong>5 países de América Latina</strong>.</p>
       <div class="actions">
@@ -741,6 +764,7 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
       </div>
     </div>
     <figure class="portrait">
+      <div class="m-name" aria-hidden="true"><span>Consultor en estrategia comercial</span><b>Julio<br>Cardozo Ferrer</b></div>
       <div class="ph"><img id="heroImg" src="julio-cardozo-ferrer-consultor-stm-latam.jpg" alt="Julio Cardozo Ferrer, fundador de STM LATAM" width="1254" height="1254"></div>
       <div class="badge" aria-hidden="true">
         <svg id="badgeRing" viewBox="0 0 124 124"><defs><path id="circ" d="M62,62 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#circ" textLength="286" lengthAdjust="spacing">Route to Market · Trade Marketing · Estrategia · </textPath></text></svg>
