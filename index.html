@@ -156,10 +156,17 @@ section.block { padding: clamp(64px, 8vw, 112px) 0; }
 .hero h1 .w { display: inline-block; }
 .hero h1 .w.nb { display: block; white-space: nowrap; }
 .hero .role { font-size: clamp(20px, 1.8vw, 24px); line-height: 1.35; margin: 20px 0 0; max-width: 30ch; }
+.hero .role strong { color: var(--accent); font-weight: 600; }
+.solve { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 8px; max-width: 520px; }
+.solve li { position: relative; padding: 11px 14px 11px 44px; background: #fff; border: 1px solid var(--line); border-radius: 12px; font-size: 15px; line-height: 1.35; color: var(--muted); }
+.solve li::before { content: ""; position: absolute; left: 14px; top: 50%; width: 18px; height: 18px; margin-top: -9px; border-radius: 50%; background: var(--sky) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px no-repeat; }
+.solve b { color: var(--text); font-weight: 600; }
+.spec { position: absolute; left: 16px; bottom: 56px; z-index: 3; max-width: 62%; padding: 10px 14px; border-radius: 12px; background: rgba(20,29,56,.9); color: #fff; font-size: 14px; font-weight: 600; line-height: 1.3; box-shadow: 0 10px 26px rgba(20,29,56,.25); }
+.spec span { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #a9d4f2; margin-bottom: 3px; }
 .hero .lead { color: var(--muted); max-width: 50ch; margin: 18px 0 0; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
 .portrait { position: relative; margin: 0 0 28px; }
-.portrait .ph { overflow: hidden; border-radius: var(--r); background: var(--card); }
+.portrait .ph { position: relative; overflow: hidden; border-radius: var(--r); background: var(--card); }
 .portrait img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; will-change: transform; }
 .chips-row { position: absolute; left: 18px; right: 18px; bottom: -30px; display: flex; gap: 10px; justify-content: center; }
 .hchip { background: rgba(255,255,255,.96); backdrop-filter: blur(8px); border-radius: 14px; padding: 12px 16px; box-shadow: 0 14px 36px rgba(20,29,56,.16); display: flex; align-items: center; gap: 10px; flex: 1 1 0; min-width: 0; animation: bob 6s ease-in-out infinite; }
@@ -607,6 +614,28 @@ footer a { color: var(--text); }
 body:has(.fw-panel.open) .wa-float, body:has(.vmodal.open) .wa-float, body:has(.mnav.open) .wa-float { opacity: 0; pointer-events: none; }
 body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has(.mnav.open) .float-cta, body:has(.nav.open) .float-cta { transform: translateY(140%); opacity: 0; pointer-events: none; }
 
+/* Instrucciones de uso */
+.howto { list-style: none; margin: 0 auto 26px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; max-width: 980px; }
+.howto li { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; background: var(--tint); font-size: 14.5px; line-height: 1.35; color: var(--muted); }
+.howto em { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--stm); color: #fff; font-style: normal; font-weight: 700; font-size: 14px; display: grid; place-items: center; }
+.howto b { color: var(--text); }
+@media (max-width: 760px) {
+  .howto { grid-template-columns: 1fr; gap: 6px; margin-bottom: 18px; }
+  .howto li { padding: 9px 12px; font-size: 14px; }
+  .stairs { height: auto !important; min-height: 0 !important; margin-bottom: 14px; }
+  .lvl .hd span { font-size: 15px; }
+  .mat-panel ol li span { display: none; }
+}
+
+/* Llamados a la acción */
+.cta-band { margin-top: clamp(36px, 5vw, 56px); border-radius: var(--r); padding: clamp(24px, 3.4vw, 40px); background: linear-gradient(120deg, var(--navy), #2c3f73); color: #fff; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px 32px; align-items: center; }
+.cta-band h3 { font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; margin: 0; color: #fff; }
+.cta-band p { margin: 8px 0 0; color: rgba(255,255,255,.8); font-size: 15.5px; }
+.cta-band .acts { display: flex; flex-wrap: wrap; gap: 10px; }
+.cta-band .btn.light { background: #fff; color: var(--navy); }
+.dark .cta-band { background: linear-gradient(120deg, #2c6fa6, var(--sky)); }
+@media (max-width: 760px) { .cta-band { grid-template-columns: 1fr; } .cta-band .acts .btn { flex: 1 1 100%; justify-content: center; } }
+
 /* Entradas al hacer scroll */
 .js .hero h1 .w { animation: wordIn .9s cubic-bezier(.2,.7,.2,1) both; }
 .js .hero h1 .w:nth-child(2) { animation-delay: .1s; } .js .hero h1 .w:nth-child(3) { animation-delay: .2s; }
@@ -627,7 +656,10 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
   .nav ul { display: none; } .burger { display: inline-flex; } .nav .right .btn { display: none; }
   .hero .wrap, .split, .contact, .diag, .tools, .mix-out { grid-template-columns: 1fr; }
   .portrait { order: -1; max-width: 520px; }
-  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .stat { min-height: 0; padding: 18px; gap: 10px; }
+  .stat .n { font-size: 32px; }
+  .stat p { font-size: 13.5px; line-height: 1.35; }
   .answer { position: static; }
   .chain { grid-template-columns: 1fr; gap: 22px; }
   .chain::before { top: 10px; bottom: 10px; left: 37px; right: auto; width: 2px; height: auto; background: repeating-linear-gradient(180deg, var(--accent) 0 10px, transparent 10px 18px); animation: none; }
@@ -649,7 +681,8 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
   .stats, .svc-grid, .answer .cols, .fw-panel ul, .tl-notes { grid-template-columns: 1fr; }
   .flow { grid-template-columns: 1fr; }
   .stage-c, .stage-c:first-child { clip-path: none; border-radius: 14px; padding-left: 22px; }
-  .chips-row { position: static; margin-top: 12px; flex-wrap: wrap; }
+  .chips-row { position: static; margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .spec { bottom: 16px; }
   .hchip { flex: 1 1 140px; }
   .portrait { margin-bottom: 0; }
   .badge { left: auto; right: 10px; top: 10px; width: 96px; height: 96px; }
@@ -683,6 +716,7 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
     <a class="mark" href="#inicio" aria-label="Julio Cardozo Ferrer, volver al inicio"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="14" fill="#141d38"/><text x="23" y="32" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="25" fill="#fff" letter-spacing="-1">jcf</text><circle cx="38" cy="31" r="3.2" fill="#e6007e"/></svg><span class="mtxt">Julio Cardozo Ferrer<small>Founder &amp; Director, STM LATAM</small></span></a>
     <nav aria-label="Secciones">
       <ul id="navList">
+        <li><a href="#en-accion">Equipo</a></li>
         <li><a href="#test">Diagnóstico</a></li>
         <li><a href="#valor">Captura de valor</a></li>
         <li><a href="#marco">Marco de trabajo</a></li>
@@ -698,12 +732,13 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
   </div>
 </header>
 <nav class="mnav" id="mnav" aria-label="Menú">
-  <a href="#test">Diagnóstico<small>01</small></a>
-  <a href="#valor">Captura de valor<small>02</small></a>
-  <a href="#marco">Marco de trabajo<small>03</small></a>
-  <a href="#metodologia">Metodología<small>04</small></a>
-  <a href="#casos">Casos<small>05</small></a>
-  <a href="#videos">Videos<small>06</small></a>
+  <a href="#en-accion">Equipo en acción<small>01</small></a>
+  <a href="#test">Diagnóstico<small>02</small></a>
+  <a href="#valor">Captura de valor<small>03</small></a>
+  <a href="#marco">Marco de trabajo<small>04</small></a>
+  <a href="#metodologia">Metodología<small>05</small></a>
+  <a href="#casos">Casos<small>06</small></a>
+  <a href="#videos">Videos<small>07</small></a>
   <a class="btn light" href="#contacto">Agendar una conversación</a>
 </nav>
 
@@ -714,15 +749,20 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
     <div>
       <p class="eyebrow">Consultor en estrategia y transformación comercial</p>
       <h1 id="nombre"><span class="w">Julio</span> <span class="w nb">Cardozo Ferrer</span></h1>
-      <p class="role">Identificar oportunidades. Desarrollar capacidades. Capturar valor.</p>
-      <p class="lead">Fundador y director de <strong>STM LATAM</strong>. Acompaño a multinacionales, pymes y distribuidoras de América Latina a <strong>capturar el valor que hoy pierden en sus canales</strong>, con proyectos de <strong>Route to Market</strong>, <strong>Trade Marketing</strong> y <strong>reestructuración comercial</strong>.</p>
+      <p class="role">Ayudo a empresas de consumo masivo a <strong>vender más con lo que ya tienen</strong>.</p>
+      <ul class="solve" aria-label="Qué soluciono">
+        <li><b>Canales y distribuidores</b> que no llegan a todos los clientes</li>
+        <li><b>Ejecución en el punto de venta</b> que no se ve en la góndola</li>
+        <li><b>Equipos comerciales</b> sin procesos, metas ni seguimiento</li>
+      </ul>
+      <p class="lead">Fundador y director de <strong>STM LATAM</strong>. Proyectos de <strong>Route to Market</strong>, <strong>Trade Marketing</strong> y <strong>reestructuración comercial</strong> en multinacionales, pymes y distribuidoras.</p>
       <div class="actions">
         <a class="btn solid" href="#test">Hacer el diagnóstico</a>
         <a class="btn outline" href="#contacto">Agendar una conversación</a>
       </div>
     </div>
     <figure class="portrait">
-      <div class="ph"><img id="heroImg" src="julio-cardozo-ferrer-consultor-stm-latam.jpg" alt="Julio Cardozo Ferrer, fundador de STM LATAM" width="1254" height="1254"></div>
+      <div class="ph"><img id="heroImg" src="julio-cardozo-ferrer-consultor-stm-latam.jpg" alt="Julio Cardozo Ferrer, fundador de STM LATAM" width="1254" height="1254"><div class="spec"><span>Especialista en</span>crecimiento comercial de empresas de consumo masivo</div></div>
       <div class="badge" aria-hidden="true">
         <svg id="badgeRing" viewBox="0 0 124 124"><defs><path id="circ" d="M62,62 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#circ" textLength="286" lengthAdjust="spacing">Route to Market · Trade Marketing · Estrategia · </textPath></text></svg>
         <span class="core">&#8599;</span>
@@ -731,6 +771,7 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
         <div class="hchip"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7h7l2 2h9v10H3z"/><path d="M8 14l3 3 5-6"/></svg></div><div><b>+50</b><span>proyectos realizados</span></div></div>
         <div class="hchip"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></div><div><b>+300</b><span>distribuidores evaluados</span></div></div>
         <div class="hchip"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><b>+20</b><span>años en el área comercial</span></div></div>
+        <div class="hchip"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg></div><div><b>5</b><span>países de alcance en la región</span></div></div>
       </div>
     </figure>
   </div>
@@ -746,17 +787,29 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
     <div class="intro rise">
       <p class="eyebrow">En números</p>
       <h2 id="cifras-t">Resultados que respaldan el método</h2>
-      <p>Proyectos con <strong>impacto medible</strong> en multinacionales, pymes y redes de distribución de <strong>cinco países</strong>.</p>
+      <p>Algunos resultados de los proyectos que implementamos.</p>
     </div>
     <div class="stats">
-      <div class="stat tilt"><div class="n" data-count="850" data-prefix="+">+850</div><p><strong>tiendas activadas</strong> en una sola activación tecnológica</p></div>
-      <div class="stat c2 tilt"><div class="n" data-count="50" data-prefix="+">+50</div><p>proyectos <strong>implementados</strong> en multinacionales y pymes</p></div>
-      <div class="stat c3 tilt"><div class="n" data-count="30" data-prefix="+">+30</div><p>clientes que <strong>vuelven a elegirnos</strong></p></div>
-      <div class="stat c4 tilt"><div class="n" data-count="13">13</div><p><strong>marcas líderes</strong>, de CCU a Unilever</p></div>
-      <div class="stat c4 tilt"><div class="n" data-count="20000" data-prefix="+">+20.000</div><p><strong>puntos de venta censados</strong> en 90 días, con 33 censistas</p></div>
-      <div class="stat tilt"><div class="n" data-count="5">5</div><p>países: <strong>Argentina, Chile, México, Ecuador y Paraguay</strong></p></div>
-      <div class="stat c2 tilt"><div class="n">2.º<small>de 63</small></div><p><strong>Plata POPAI 2018</strong>, mejor promoción en el punto de venta de Latinoamérica</p></div>
-      <div class="stat c3 tilt"><div class="n" data-count="20" data-prefix="+" data-suffix="&lt;small&gt;años&lt;/small&gt;">+20<small>años</small></div><p>en el área comercial, <strong>9 al frente de STM</strong></p></div>
+      <div class="stat c2 tilt"><div class="n" data-count="13">13</div><p><strong>marcas líderes</strong> nos eligieron, de CCU a Unilever</p></div>
+      <div class="stat tilt"><div class="n" data-count="20000" data-prefix="+">+20.000</div><p><strong>puntos de venta censados</strong> en 90 días para un solo cliente</p></div>
+      <div class="stat c3 tilt"><div class="n" data-count="850" data-prefix="+">+850</div><p><strong>tiendas activadas</strong> en una sola implementación tecnológica</p></div>
+      <div class="stat c4 tilt"><div class="n">Plata</div><p><strong>POPAI 2018</strong>: mejor promoción en el punto de venta de Latinoamérica</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="en-accion" aria-labelledby="accion-t">
+  <div class="wrap">
+    <div class="intro rise">
+      <p class="eyebrow">En acción</p>
+      <h2 id="accion-t">Nos apasiona trabajar en equipo</h2>
+      <p>Workshops, pilotos e implementaciones <strong>codo a codo con los equipos</strong> de nuestros clientes. No entregamos un informe y nos vamos: construimos las soluciones en la mesa de trabajo y las llevamos a la calle, con el equipo.</p>
+    </div>
+    <div class="gal rise">
+      <figure><img src="fotos/julio-cardozo-ferrer-workshop-equipo-comercial.jpg" alt="Julio Cardozo Ferrer coordinando un workshop con un equipo comercial" width="1600" height="1200" loading="lazy"><figcaption><span>Workshop</span>Diseñamos la solución junto al equipo comercial</figcaption></figure>
+      <figure><img src="fotos/julio-cardozo-ferrer-presentacion-enfoque-360.jpg" alt="Julio Cardozo Ferrer presentando el enfoque 360 de STM LATAM" width="1600" height="1200" loading="lazy"><figcaption><span>Implementación</span>Alineamos a la dirección con el enfoque 360°</figcaption></figure>
+      <figure><img src="fotos/julio-cardozo-ferrer-workshop-piloto.jpg" alt="Workshop de STM LATAM con un equipo comercial para preparar un piloto" width="1600" height="1200" loading="lazy"><figcaption><span>Piloto</span>Probamos el modelo con el equipo antes de escalar</figcaption></figure>
+      <figure><img src="fotos/julio-cardozo-ferrer-equipo-stm-latam.jpg" alt="Julio Cardozo Ferrer con el equipo de proyecto" width="1200" height="900" loading="lazy" style="object-position: 50% 30%"><figcaption><span>Equipo</span>Celebramos cada implementación con el equipo</figcaption></figure>
     </div>
   </div>
 </section>
@@ -782,6 +835,11 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
       <h2 id="valor-t">El valor que se escapa entre la estrategia y la góndola</h2>
       <p>De cada 100 de <strong>venta potencial</strong>, muchas compañías capturan la mitad. El resto se pierde en <strong>cinco fugas</strong>. Elegí una fuga y <strong>cerrala</strong> para ver cómo crece lo que capturás.</p>
     </div>
+    <ol class="howto rise" aria-label="Cómo usar el gráfico">
+      <li><em>1</em><span><b>Tocá una fuga</b> del gráfico (las barras de color)</span></li>
+      <li><em>2</em><span><b>Leé qué pasa</b> y cómo la cerramos</span></li>
+      <li><em>3</em><span><b>Tocá “Cerrar esta fuga”</b> y mirá crecer la venta</span></li>
+    </ol>
     <div class="leak">
       <div>
         <div class="wf-top">
@@ -796,6 +854,7 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
       </div>
       <div class="leak-panel" id="leakPanel" aria-live="polite"></div>
     </div>
+    <div class="cta-band rise"><div><h3>¿Cuántas fugas tiene tu compañía?</h3><p>En un workshop de diagnóstico las medimos con tus datos y priorizamos cuáles cerrar primero.</p></div><div class="acts"><a class="btn light" href="#contacto">Agendar un workshop</a><a class="btn wa-btn" href="https://wa.me/5491123745576?text=Hola%20Julio%2C%20te%20escribo%20desde%20juliocardozoferrer.com" target="_blank" rel="noopener">WhatsApp</a></div></div>
   </div>
 </section>
 
@@ -825,6 +884,11 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
       <h2 id="mad-t">Cada compañía está en un escalón distinto</h2>
       <p>Tres niveles evolutivos, cada uno con tres pasos. Mirá <strong>cómo se ve tu compañía hoy</strong> en cada nivel, <strong>qué trabajamos</strong> y <strong>a dónde llegás</strong>.</p>
     </div>
+    <ol class="howto rise" aria-label="Cómo usar la escalera">
+      <li><em>1</em><span><b>Tocá un escalón</b>: ordenar, profesionalizar o escalar</span></li>
+      <li><em>2</em><span><b>Fijate si tu compañía</b> se ve así hoy</span></li>
+      <li><em>3</em><span><b>Pasá al siguiente nivel</b> con el botón de abajo</span></li>
+    </ol>
     <div class="maturity">
       <div class="stairs" id="stairs" role="toolbar" aria-label="Niveles de madurez">
         <button type="button" class="lvl" aria-pressed="true"><span class="hd"><small>Nivel 1</small><span>Ordenar</span></span><span class="subs"><i style="height:44px"></i><i style="height:60px"></i><i style="height:76px"></i></span></button>
@@ -860,6 +924,7 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
         <div class="fw-nav"><button type="button" id="fwPrev">&larr; Anterior</button><button type="button" class="next" id="fwNext">Siguiente &rarr;</button><span class="fw-dots" id="fwDots"></span></div>
       </div>
     </div>
+    <div class="cta-band rise"><div><h3>Empezá a resolver tus problemas comerciales</h3><p>Contanos dónde está el freno y armamos juntos el plan para tu compañía.</p></div><div class="acts"><a class="btn light" href="#contacto">Agendar una reunión</a><a class="btn wa-btn" href="https://wa.me/5491123745576?text=Hola%20Julio%2C%20te%20escribo%20desde%20juliocardozoferrer.com" target="_blank" rel="noopener">WhatsApp</a></div></div>
   </div>
 </section>
 
@@ -1058,6 +1123,7 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
         <span class="bd"><h3>Evaluación de la red de distribuidores</h3><p>Evaluamos la <strong>eficiencia de cada distribuidor</strong>: capacidad logística, ejecución del equipo comercial y oportunidades de crecimiento.</p><span class="out"><b>Resultado:</b> un plan de crecimiento personalizado para cada socio de la red.</span></span>
       </button>
     </div>
+    <div class="cta-band rise"><div><h3>¿Querés resultados como estos?</h3><p>Agendá una reunión de 30 minutos y vemos si podemos ayudarte.</p></div><div class="acts"><a class="btn light" href="#contacto">Agendar una reunión</a><a class="btn wa-btn" href="https://wa.me/5491123745576?text=Hola%20Julio%2C%20te%20escribo%20desde%20juliocardozoferrer.com" target="_blank" rel="noopener">WhatsApp</a></div></div>
   </div>
 </section>
 
@@ -1202,22 +1268,6 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
       </button>
     </div>
     <div class="actions" style="justify-content:center"><a class="btn outline" href="https://www.linkedin.com/in/julio10/recent-activity/videos/" rel="noopener">Ver todos los videos en LinkedIn</a></div>
-  </div>
-</section>
-
-<section class="block" id="en-accion" aria-labelledby="accion-t">
-  <div class="wrap">
-    <div class="intro rise">
-      <p class="eyebrow">En acción</p>
-      <h2 id="accion-t">Nos apasiona trabajar en equipo</h2>
-      <p>Workshops, pilotos e implementaciones <strong>codo a codo con los equipos</strong> de nuestros clientes. No entregamos un informe y nos vamos: construimos las soluciones en la mesa de trabajo y las llevamos a la calle, con el equipo.</p>
-    </div>
-    <div class="gal rise">
-      <figure><img src="fotos/julio-cardozo-ferrer-workshop-equipo-comercial.jpg" alt="Julio Cardozo Ferrer coordinando un workshop con un equipo comercial" width="1600" height="1200" loading="lazy"><figcaption><span>Workshop</span>Diseñamos la solución junto al equipo comercial</figcaption></figure>
-      <figure><img src="fotos/julio-cardozo-ferrer-presentacion-enfoque-360.jpg" alt="Julio Cardozo Ferrer presentando el enfoque 360 de STM LATAM" width="1600" height="1200" loading="lazy"><figcaption><span>Implementación</span>Alineamos a la dirección con el enfoque 360°</figcaption></figure>
-      <figure><img src="fotos/julio-cardozo-ferrer-workshop-piloto.jpg" alt="Workshop de STM LATAM con un equipo comercial para preparar un piloto" width="1600" height="1200" loading="lazy"><figcaption><span>Piloto</span>Probamos el modelo con el equipo antes de escalar</figcaption></figure>
-      <figure><img src="fotos/julio-cardozo-ferrer-equipo-stm-latam.jpg" alt="Julio Cardozo Ferrer con el equipo de proyecto" width="1200" height="900" loading="lazy" style="object-position: 50% 30%"><figcaption><span>Equipo</span>Celebramos cada implementación con el equipo</figcaption></figure>
-    </div>
   </div>
 </section>
 
@@ -1443,11 +1493,12 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
   ];
   var st = $('stairs'), mp = $('matPanel');
   if (st && mp) {
+    if (window.matchMedia('(max-width: 760px)').matches) each(st.querySelectorAll('.subs i'), function (i) { i.style.height = Math.round(parseInt(i.style.height, 10) * .55) + 'px'; });
     var msel = function (i) {
       each(st.children, function (b, k) { b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
       var x = lv[i];
       mp.innerHTML = '<div class="swap"><div class="tp"><h3>' + x.h + '</h3><span class="tag">Nivel ' + (i + 1) + ' de 3</span></div><p class="lead2">' + x.d + '</p><div class="sym"><b>Cómo se ve tu compañía hoy</b><ul>' + x.y.map(function (z) { return '<li>' + z + '</li>'; }).join('') + '</ul></div><ol>' + x.s.map(function (y, k) { return '<li><em>' + (i + 1) + '.' + (k + 1) + '</em><div><b>' + y[0] + '</b><span>' + y[1] + '</span></div></li>'; }).join('') + '</ol><div class="res"><b>A dónde llegás</b>' + x.r + '</div><div class="mat-nav">' + (i > 0 ? '<button type="button" class="chip-btn" data-go="' + (i - 1) + '">&larr; Nivel ' + i + '</button>' : '') + (i < 2 ? '<button type="button" class="chip-btn main" data-go="' + (i + 1) + '">Nivel ' + (i + 2) + ' &rarr;</button>' : '') + '</div></div>';
-      each(mp.querySelectorAll('[data-go]'), function (b) { b.addEventListener('click', function () { msel(+b.dataset.go); }); });
+      each(mp.querySelectorAll('[data-go]'), function (b) { b.addEventListener('click', function () { msel(+b.dataset.go); if (window.matchMedia('(max-width: 760px)').matches) st.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
     };
     each(st.children, function (b, i) { b.addEventListener('click', function () { msel(i); }); });
     msel(0);
