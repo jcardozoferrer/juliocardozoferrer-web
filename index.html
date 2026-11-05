@@ -161,7 +161,7 @@ section.block { padding: clamp(64px, 8vw, 112px) 0; }
 .solve li { position: relative; padding: 11px 14px 11px 44px; background: #fff; border: 1px solid var(--line); border-radius: 12px; font-size: 15px; line-height: 1.35; color: var(--muted); }
 .solve li::before { content: ""; position: absolute; left: 14px; top: 50%; width: 18px; height: 18px; margin-top: -9px; border-radius: 50%; background: var(--sky) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px no-repeat; }
 .solve b { color: var(--text); font-weight: 600; }
-.spec { position: absolute; left: 16px; bottom: 56px; z-index: 3; max-width: 62%; padding: 10px 14px; border-radius: 12px; background: rgba(20,29,56,.9); color: #fff; font-size: 14px; font-weight: 600; line-height: 1.3; box-shadow: 0 10px 26px rgba(20,29,56,.25); }
+.spec { position: absolute; right: 16px; top: 16px; z-index: 3; max-width: 62%; padding: 10px 14px; border-radius: 12px; background: rgba(20,29,56,.9); color: #fff; font-size: 14px; font-weight: 600; line-height: 1.3; box-shadow: 0 10px 26px rgba(20,29,56,.25); }
 .spec span { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #a9d4f2; margin-bottom: 3px; }
 .hero .lead { color: var(--muted); max-width: 50ch; margin: 18px 0 0; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
@@ -614,6 +614,7 @@ footer a { color: var(--text); }
 body:has(.fw-panel.open) .wa-float, body:has(.vmodal.open) .wa-float, body:has(.mnav.open) .wa-float { opacity: 0; pointer-events: none; }
 body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has(.mnav.open) .float-cta, body:has(.nav.open) .float-cta { transform: translateY(140%); opacity: 0; pointer-events: none; }
 
+@media (min-width: 961px) { .chips-row { left: 10px; right: 10px; gap: 8px; } .hchip { padding: 10px 12px; } .hchip .ic { display: none; } .hchip b { font-size: 20px; } .hchip span { font-size: 11.5px; } }
 /* Instrucciones de uso */
 .howto { list-style: none; margin: 0 auto 26px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; max-width: 980px; }
 .howto li { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; background: var(--tint); font-size: 14.5px; line-height: 1.35; color: var(--muted); }
@@ -682,7 +683,7 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
   .flow { grid-template-columns: 1fr; }
   .stage-c, .stage-c:first-child { clip-path: none; border-radius: 14px; padding-left: 22px; }
   .chips-row { position: static; margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .spec { bottom: 16px; }
+  .spec { top: auto; right: auto; left: 16px; bottom: 16px; }
   .hchip { flex: 1 1 140px; }
   .portrait { margin-bottom: 0; }
   .badge { left: auto; right: 10px; top: 10px; width: 96px; height: 96px; }
@@ -749,7 +750,7 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
     <div>
       <p class="eyebrow">Consultor en estrategia y transformación comercial</p>
       <h1 id="nombre"><span class="w">Julio</span> <span class="w nb">Cardozo Ferrer</span></h1>
-      <p class="role">Ayudo a empresas de consumo masivo a <strong>vender más con lo que ya tienen</strong>.</p>
+      <p class="role">Ayudo a empresas de todas las industrias a <strong>vender más con lo que ya tienen</strong>.</p>
       <ul class="solve" aria-label="Qué soluciono">
         <li><b>Canales y distribuidores</b> que no llegan a todos los clientes</li>
         <li><b>Ejecución en el punto de venta</b> que no se ve en la góndola</li>
@@ -762,7 +763,7 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
       </div>
     </div>
     <figure class="portrait">
-      <div class="ph"><img id="heroImg" src="julio-cardozo-ferrer-consultor-stm-latam.jpg" alt="Julio Cardozo Ferrer, fundador de STM LATAM" width="1254" height="1254"><div class="spec"><span>Especialista en</span>crecimiento comercial de empresas de consumo masivo</div></div>
+      <div class="ph"><img id="heroImg" src="julio-cardozo-ferrer-consultor-stm-latam.jpg" alt="Julio Cardozo Ferrer, fundador de STM LATAM" width="1254" height="1254"><div class="spec"><span>Especialista en</span>crecimiento comercial, canales y distribuidores</div></div>
       <div class="badge" aria-hidden="true">
         <svg id="badgeRing" viewBox="0 0 124 124"><defs><path id="circ" d="M62,62 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#circ" textLength="286" lengthAdjust="spacing">Route to Market · Trade Marketing · Estrategia · </textPath></text></svg>
         <span class="core">&#8599;</span>
