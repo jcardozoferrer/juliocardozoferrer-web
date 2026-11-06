@@ -8,7 +8,7 @@
    ───────────────────────────────────────────────────────────── */
 window.JCF_MEDICION = {
   ga4: 'G-T5BQLG66BM',
-  metaPixel: '',
+  metaPixel: '1842498683437590',
   googleAds: ''
 };
 
