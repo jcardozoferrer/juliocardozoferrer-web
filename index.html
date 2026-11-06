@@ -616,6 +616,12 @@ body:has(.fw-panel.open) .wa-float, body:has(.vmodal.open) .wa-float, body:has(.
 body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has(.mnav.open) .float-cta, body:has(.nav.open) .float-cta { transform: translateY(140%); opacity: 0; pointer-events: none; }
 
 @media (min-width: 961px) { .chips-row { left: 10px; right: 10px; gap: 8px; } .hchip { padding: 10px 12px; } .hchip .ic { display: none; } .hchip b { font-size: 20px; } .hchip span { font-size: 11.5px; } }
+/* Ver más */
+.more-box { display: flex; align-items: center; justify-content: space-between; gap: 20px 32px; flex-wrap: wrap; padding: clamp(26px, 3.4vw, 40px); border-radius: var(--r); border: 1.5px dashed var(--line); background: var(--tint); }
+.more-box h2 { font-size: clamp(26px, 3vw, 38px); margin: 0; }
+.more-box p:not(.eyebrow) { margin: 10px 0 0; color: var(--muted); max-width: 56ch; }
+.more-cta { padding-bottom: clamp(24px, 3vw, 40px); }
+
 /* Instrucciones de uso */
 .howto { list-style: none; margin: 0 auto 26px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; max-width: 980px; }
 .howto li { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; background: var(--tint); font-size: 14.5px; line-height: 1.35; color: var(--muted); }
@@ -720,11 +726,10 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
       <ul id="navList">
         <li><a href="#en-accion">Equipo</a></li>
         <li><a href="#test">Diagnóstico</a></li>
-        <li><a href="#valor">Captura de valor</a></li>
-        <li><a href="#marco">Marco de trabajo</a></li>
-        <li><a href="#metodologia">Metodología</a></li>
         <li><a href="#casos">Casos</a></li>
         <li><a href="#videos">Videos</a></li>
+        <li><a href="#valor">Captura de valor</a></li>
+        <li><a href="#marco">Cómo trabajamos</a></li>
       </ul>
     </nav>
     <div class="right">
@@ -736,11 +741,11 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
 <nav class="mnav" id="mnav" aria-label="Menú">
   <a href="#en-accion">Equipo en acción<small>01</small></a>
   <a href="#test">Diagnóstico<small>02</small></a>
-  <a href="#valor">Captura de valor<small>03</small></a>
-  <a href="#marco">Marco de trabajo<small>04</small></a>
-  <a href="#metodologia">Metodología<small>05</small></a>
-  <a href="#casos">Casos<small>06</small></a>
-  <a href="#videos">Videos<small>07</small></a>
+  <a href="#casos">Casos<small>03</small></a>
+  <a href="#videos">Videos<small>04</small></a>
+  <a href="#valor">Captura de valor<small>05</small></a>
+  <a href="#marco">Cómo trabajamos<small>06</small></a>
+  <a href="#metodologia">Metodología<small>07</small></a>
   <a class="btn light" href="#contacto">Agendar una conversación</a>
 </nav>
 
@@ -830,6 +835,78 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
   </div>
 </section>
 
+<section class="block" id="casos" aria-labelledby="casos-t">
+  <div class="wrap">
+    <div class="intro rise">
+      <p class="eyebrow">Casos</p>
+      <h2 id="casos-t">Proyectos que dejaron capacidades instaladas</h2>
+      <p>Por confidencialidad no nombramos a los clientes. Sí contamos <strong>el problema</strong>, <strong>lo que hicimos</strong> y <strong>lo que quedó</strong>.</p>
+    </div>
+    <div class="cases">
+      <button type="button" class="case tilt" data-mp4="videos/foodservice.mp4" data-t="Censo nacional del canal Food Service">
+        <span class="thumb" style="--bgc: linear-gradient(90deg, rgba(20,29,56,.94) 0%, rgba(20,29,56,.6) 52%, rgba(20,29,56,.05) 100%), url(videos/foodservice.jpg) right 22% top 40% / 42% auto no-repeat, linear-gradient(150deg, #111318, #3a4470);"><span class="tag">Multinacional de alimentos · Video</span><span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="big">Food Service</span></span>
+        <span class="bd"><h3>Censo nacional del canal Food Service</h3><p>Una multinacional de alimentos, líder en más de 120 países, quería conocer su <strong>potencial real</strong> en gastronomía. En <strong>90 días</strong>: <strong>33 censistas</strong> en la calle, <strong>+20.000 puntos de venta</strong> censados y <strong>1.920 rutas</strong> georreferenciadas, con foto y estado de cada local.</p><span class="out"><b>Resultado:</b> la compañía dimensionó su potencial, redefinió su Route to Market y asignó zonas a cada distribuidor.</span></span>
+      </button>
+      <button type="button" class="case tilt" data-mp4="videos/rotacion.mp4" data-t="Estudio de rotación y fotos de éxito">
+        <span class="thumb" style="--bgc: linear-gradient(90deg, rgba(20,29,56,.94) 0%, rgba(20,29,56,.6) 52%, rgba(20,29,56,.05) 100%), url(videos/rotacion.jpg) right 22% top 40% / 42% auto no-repeat, linear-gradient(150deg, #141d38, #2c5d96);"><span class="tag">Compañía líder de bebidas · Video</span><span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="big">Rotación</span></span>
+        <span class="bd"><h3>Estudio de rotación y fotos de éxito</h3><p>Para aguas, isotónicas, cervezas y vinos, con <strong>alcance regional</strong>, medimos la <strong>rotación real por categoría</strong> y comparamos <strong>dos fotos de éxito</strong> en góndola: planograma actual contra bloque por marca.</p><span class="out"><b>Resultado:</b> miles de datos de rotación, litros y precios en tableros digitales para decidir la exhibición con datos.</span></span>
+      </button>
+      <button type="button" class="case tilt" data-mp4="videos/modelo-comercial.mp4" data-t="Modelo de gestión comercial completo">
+        <span class="thumb" style="--bgc: linear-gradient(90deg, rgba(20,29,56,.94) 0%, rgba(20,29,56,.6) 52%, rgba(20,29,56,.05) 100%), url(videos/modelo-comercial.jpg) right 22% top 40% / 42% auto no-repeat, linear-gradient(150deg, #1d2a4f, #4f7fc0);"><span class="tag">Medicina prepaga · Video</span><span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="big">90 días</span></span>
+        <span class="bd"><h3>Un área comercial construida desde cero en 90 días</h3><p>Para una compañía de medicina prepaga con cobertura nacional armamos la <strong>estructura comercial</strong> (empresas, nuevos afiliados y canal digital), el <strong>playbook</strong>, un <strong>variable por cumplimiento</strong> y rutinas diarias, semanales, quincenales y mensuales.</p><span class="out"><b>Resultado:</b> un equipo que sabe qué hacer y cómo hacerlo, funcionando en 90 días.</span></span>
+      </button>
+      <button type="button" class="case tilt" data-mp4="videos/textil.mp4" data-t="Reestructuración comercial de una empresa textil">
+        <span class="thumb" style="--bgc: linear-gradient(90deg, rgba(20,29,56,.94) 0%, rgba(20,29,56,.6) 52%, rgba(20,29,56,.05) 100%), url(videos/textil.jpg) right 22% top 40% / 42% auto no-repeat, linear-gradient(150deg, #1d2a4f, #6b6fc9);"><span class="tag">Empresa textil argentina · Video</span><span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="big">Textil</span></span>
+        <span class="bd"><h3>Reestructuración comercial: canales especializados</h3><p>Una textil que fabrica, importa y exporta tenía <strong>la facturación concentrada en pocos clientes y pocos vendedores</strong>: todos vendían todo. Analizamos <strong>3 años de ventas</strong>, entrevistamos clientes y visitamos el mercado para diseñar <strong>canales especializados</strong> y una cuenta digital.</p><span class="out"><b>Resultado:</b> crecimiento destrabado en facturación, profundidad de cuentas y mix de productos, con más clientes nuevos.</span></span>
+      </button>
+      <button type="button" class="case tilt wide" data-li="https://www.linkedin.com/feed/update/urn:li:activity:7320848808286801921" data-t="Evaluación de la red de distribuidores">
+        <span class="thumb" style="--bgc: linear-gradient(150deg, #3a4470, #4ea8de);"><span class="tag">Redes de distribución · Video en LinkedIn</span><span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="big">Distribuidores</span></span>
+        <span class="bd"><h3>Evaluación de la red de distribuidores</h3><p>Evaluamos la <strong>eficiencia de cada distribuidor</strong>: capacidad logística, ejecución del equipo comercial y oportunidades de crecimiento.</p><span class="out"><b>Resultado:</b> un plan de crecimiento personalizado para cada socio de la red.</span></span>
+      </button>
+    </div>
+    <div class="cta-band rise"><div><h3>¿Querés resultados como estos?</h3><p>Agendá una reunión de 30 minutos y vemos si podemos ayudarte.</p></div><div class="acts"><a class="btn light" href="#contacto">Agendar una reunión</a><a class="btn wa-btn" href="https://wa.me/5491123745576?text=Hola%20Julio%2C%20te%20escribo%20desde%20juliocardozoferrer.com" target="_blank" rel="noopener">WhatsApp</a></div></div>
+  </div>
+</section>
+
+<section class="block" id="videos" style="padding-top: 0;" aria-labelledby="videos-t">
+  <div class="wrap">
+    <div class="intro rise">
+      <p class="eyebrow">Videos y notas</p>
+      <h2 id="videos-t">Ideas para ejecutar mejor, contadas desde adentro de los proyectos</h2>
+      <p>Proyectos, herramientas y lanzamientos de STM LATAM, contados en menos de un minuto.</p>
+    </div>
+    <div class="videos">
+      <button type="button" class="vcard rise" style="--bgc: linear-gradient(0deg, rgba(17,19,24,.97) 0%, rgba(17,19,24,.78) 45%, rgba(17,19,24,.25) 100%), url(videos/plan2027.jpg) center 25% / cover no-repeat;" data-mp4="videos/plan2027.mp4" data-t="Tu plan 2027 ya tiene números. ¿Pero tiene el cómo?">
+        <span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span>
+        <span class="tag">Workshop · Planificación 2027</span>
+        <h3>Tu plan 2027 ya tiene números. ¿Pero tiene el cómo?</h3>
+      </button>
+      <button type="button" class="vcard rise" style="--bgc: linear-gradient(0deg, rgba(17,19,24,.97) 0%, rgba(17,19,24,.78) 45%, rgba(17,19,24,.25) 100%), url(videos/nubbi.jpg) center 25% / cover no-repeat;" data-mp4="videos/nubbi.mp4" data-t="Nubbi: toda tu red de distribuidores conectada">
+        <span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span>
+        <span class="tag">Nubbi · Para la compañía</span>
+        <h3>Toda tu red de distribuidores, conectada</h3>
+      </button>
+      <button type="button" class="vcard rise" style="--bgc: linear-gradient(0deg, rgba(17,19,24,.97) 0%, rgba(17,19,24,.78) 45%, rgba(17,19,24,.25) 100%), url(videos/distribuidores.jpg) center 25% / cover no-repeat;" data-mp4="videos/distribuidores.mp4" data-t="Nubbi para distribuidores y mayoristas">
+        <span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span>
+        <span class="tag">Nubbi · Distribuidores</span>
+        <h3>¿Querés que tus clientes te pidan más seguido?</h3>
+      </button>
+      <button type="button" class="vcard rise" style="--bgc: linear-gradient(0deg, rgba(17,19,24,.97) 0%, rgba(17,19,24,.78) 45%, rgba(17,19,24,.25) 100%), url(videos/nubbi2027.jpg) center 25% / cover no-repeat;" data-mp4="videos/nubbi2027.mp4" data-t="2027 está a la vuelta de la esquina">
+        <span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span>
+        <span class="tag">Nubbi · 2027</span>
+        <h3>2027 está a la vuelta de la esquina</h3>
+      </button>
+      <button type="button" class="vcard rise" style="--bgc: linear-gradient(150deg, #3a4470, #4ea8de);" data-li="https://www.linkedin.com/feed/update/urn:li:activity:7463204488741543937" data-t="ECO: el ecosistema para evaluar y valorizar redes de distribuidores">
+        <span class="big">ECO</span>
+        <span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span>
+        <span class="tag">Lanzamiento · Video en LinkedIn</span>
+        <h3>ECO: evaluar, valorizar y potenciar tu red</h3>
+      </button>
+    </div>
+    <div class="actions" style="justify-content:center"><a class="btn outline" href="https://www.linkedin.com/in/julio10/recent-activity/videos/" rel="noopener">Ver todos los videos en LinkedIn</a></div>
+  </div>
+</section>
+
 <section class="block" id="valor" aria-labelledby="valor-t">
   <div class="wrap">
     <div class="intro rise">
@@ -857,48 +934,6 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
       <div class="leak-panel" id="leakPanel" aria-live="polite"></div>
     </div>
     <div class="cta-band rise"><div><h3>¿Cuántas fugas tiene tu compañía?</h3><p>En un workshop de diagnóstico las medimos con tus datos y priorizamos cuáles cerrar primero.</p></div><div class="acts"><a class="btn light" href="#contacto">Agendar un workshop</a><a class="btn wa-btn" href="https://wa.me/5491123745576?text=Hola%20Julio%2C%20te%20escribo%20desde%20juliocardozoferrer.com" target="_blank" rel="noopener">WhatsApp</a></div></div>
-  </div>
-</section>
-
-<section class="block tint dots" id="sobre" aria-labelledby="sobre-t">
-  <div class="wrap split">
-    <div class="quote-card rise">
-      <p>¿Cuánto valor están dejando de capturar las empresas con las capacidades que ya tienen?</p>
-      <span>La pregunta con la que empieza cada proyecto</span>
-    </div>
-    <div>
-      <p class="eyebrow">Sobre mí</p>
-      <h2 id="sobre-t" class="slide">Estrategia comercial que se ejecuta</h2>
-      <div class="copy">
-        <p>Soy consultor en <strong>estrategia y transformación comercial</strong> y fundador de <strong>STM LATAM</strong>. Resuelvo los <strong>problemas estructurales</strong> que impiden a una compañía capturar valor en sus canales: <strong>Route to Market</strong>, <strong>Trade Marketing</strong>, <strong>redes de distribuidores</strong> y <strong>reestructuración comercial</strong>, en canal moderno, tradicional y Food Service.</p>
-        <p>Trabajo con <strong>método y en profundidad</strong>, del diagnóstico a la implementación, y me apoyo en <strong>datos, tableros y tecnología</strong> para que cada decisión tenga un número detrás.</p>
-        <p>Cada proyecto tiene que <strong>dejar capacidades instaladas</strong>: procesos que se sostienen, equipos que evolucionan e indicadores que se usan.</p>
-      </div>
-      <div class="actions"><a class="btn outline" href="https://www.linkedin.com/in/julio10" rel="me noopener">Ver perfil en LinkedIn</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="madurez" aria-labelledby="mad-t">
-  <div class="wrap">
-    <div class="intro rise">
-      <p class="eyebrow">Modelo de madurez comercial</p>
-      <h2 id="mad-t">Cada compañía está en un escalón distinto</h2>
-      <p>Tres niveles evolutivos, cada uno con tres pasos. Mirá <strong>cómo se ve tu compañía hoy</strong> en cada nivel, <strong>qué trabajamos</strong> y <strong>a dónde llegás</strong>.</p>
-    </div>
-    <ol class="howto rise" aria-label="Cómo usar la escalera">
-      <li><em>1</em><span><b>Tocá un escalón</b>: ordenar, profesionalizar o escalar</span></li>
-      <li><em>2</em><span><b>Fijate si tu compañía</b> se ve así hoy</span></li>
-      <li><em>3</em><span><b>Pasá al siguiente nivel</b> con el botón de abajo</span></li>
-    </ol>
-    <div class="maturity">
-      <div class="stairs" id="stairs" role="toolbar" aria-label="Niveles de madurez">
-        <button type="button" class="lvl" aria-pressed="true"><span class="hd"><small>Nivel 1</small><span>Ordenar</span></span><span class="subs"><i style="height:44px"></i><i style="height:60px"></i><i style="height:76px"></i></span></button>
-        <button type="button" class="lvl" aria-pressed="false"><span class="hd"><small>Nivel 2</small><span>Profesio&shy;nalizar</span></span><span class="subs"><i style="height:112px"></i><i style="height:136px"></i><i style="height:160px"></i></span></button>
-        <button type="button" class="lvl" aria-pressed="false"><span class="hd"><small>Nivel 3</small><span>Escalar</span></span><span class="subs"><i style="height:206px"></i><i style="height:240px"></i><i style="height:274px"></i></span></button>
-      </div>
-      <div class="mat-panel" id="matPanel" aria-live="polite"></div>
-    </div>
   </div>
 </section>
 
@@ -930,45 +965,35 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
   </div>
 </section>
 
-<section class="block" id="servicios" aria-labelledby="servicios-t">
-  <div class="wrap services">
-    <div>
-      <p class="eyebrow">Servicios</p>
-      <h2 id="servicios-t" class="slide">Lo que resolvemos en los canales</h2>
-      <div class="svc-grid">
-        <div class="svc tilt"><span class="num">01</span><h3>Route to Market y distribuidores</h3><p><strong>Modelos de distribución</strong> y servicio, segmentación, <strong>evaluación y profesionalización</strong> de la red.</p></div>
-        <div class="svc tilt"><span class="num">02</span><h3>Tactical Trade Marketing</h3><p>Canal moderno, tradicional y Food Service. <strong>Foto de éxito</strong>, medición de ejecución, censos y activaciones.</p></div>
-        <div class="svc tilt"><span class="num">03</span><h3>Estructura y procesos comerciales</h3><p><strong>Reestructuraciones</strong>, modelos de gestión, playbooks, esquemas de remuneración e <strong>indicadores</strong>.</p></div>
-        <div class="svc tilt"><span class="num">04</span><h3>Tecnología aplicada</h3><p><strong>Tableros de control</strong>, e-commerce B2B con distribuidores y <strong>predicción de resultados</strong>.</p></div>
-      </div>
+<section class="block more-cta" id="mas" aria-labelledby="mas-t">
+  <div class="wrap">
+    <div class="more-box rise">
+      <div><p class="eyebrow">Para los que quieren el detalle</p><h2 id="mas-t">Cómo trabajamos por dentro</h2><p>El modelo de madurez comercial, las cinco etapas de cada proyecto, nuestras herramientas y quién está detrás.</p></div>
+      <button type="button" class="btn solid" id="masBtn" aria-expanded="false" aria-controls="masBody">Ver más</button>
     </div>
-    <aside class="svc-side rise" aria-label="Para quién trabajo">
-      <h3>Trabajo con quienes tienen que hacer que la estrategia llegue al mercado</h3>
-      <ul>
-        <li>Multinacionales<span>Direcciones comerciales, de ventas y de Trade Marketing</span></li>
-        <li>Pymes<span>Dueños y gerentes que necesitan ordenar y profesionalizar su área comercial</span></li>
-        <li>Distribuidoras<span>Redes que quieren crecer con procesos, equipo e indicadores</span></li>
-      </ul>
-    </aside>
   </div>
 </section>
-
-<section class="block dots" id="cadena" style="padding-top: 0;" aria-labelledby="cadena-t">
+<div class="more-body" id="masBody" hidden>
+<section class="block" id="madurez" aria-labelledby="mad-t">
   <div class="wrap">
     <div class="intro rise">
-      <p class="eyebrow">Route to Market</p>
-      <h2 id="cadena-t">Trabajamos cada punto de contacto, del fabricante al shopper</h2>
-      <p>La estrategia se gana o se pierde en el recorrido entre la compañía y la góndola. Pasá el mouse por cada eslabón.</p>
+      <p class="eyebrow">Modelo de madurez comercial</p>
+      <h2 id="mad-t">Cada compañía está en un escalón distinto</h2>
+      <p>Tres niveles evolutivos, cada uno con tres pasos. Mirá <strong>cómo se ve tu compañía hoy</strong> en cada nivel, <strong>qué trabajamos</strong> y <strong>a dónde llegás</strong>.</p>
     </div>
-    <div class="chain" id="chain">
-      <div class="node rise" data-d="Modelo de <b>Route to Market</b>, segmentación de clientes y política comercial por canal y cluster."><div class="dot"><svg viewBox="0 0 24 24"><path d="M3 21V9l6 4V9l6 4V5l6 4v12z"/></svg></div><div><h3>Compañía</h3><p>Estrategia y modelo comercial</p></div></div>
-      <div class="node rise" data-d="Evaluación, valorización y <b>profesionalización de distribuidores</b>: procesos, logística, administración e indicadores."><div class="dot"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></div><div><h3>Distribuidor</h3><p>Red de socios estratégicos</p></div></div>
-      <div class="node rise" data-d="Rutinas, playbooks, <b>esquemas de remuneración</b> y gestión por indicadores para que el plan se ejecute en la calle."><div class="dot"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.5 6-5.5s5.4 2.1 6 5.5"/><path d="M16 4.5a3 3 0 0 1 0 6M18 14.8c1.7.7 2.8 2.5 3 5.2"/></svg></div><div><h3>Fuerza de ventas</h3><p>Preventa, supervisión y trade</p></div></div>
-      <div class="node rise" data-d="<b>Foto de éxito</b>, exhibición, precio, planogramas y medición continua en canal moderno, tradicional y Food Service."><div class="dot"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 10h16M4 15h16M9 4v16"/></svg></div><div><h3>Punto de venta</h3><p>Góndola, almacén y gastronomía</p></div></div>
-      <div class="node rise" data-d="<b>Experiencia de compra</b> y activaciones con tecnología aplicada para convertir visibilidad en venta."><div class="dot"><svg viewBox="0 0 24 24"><path d="M5 7h14l-1.5 9h-11z"/><path d="M9 7a3 3 0 0 1 6 0"/><circle cx="9" cy="19.5" r="1"/><circle cx="15" cy="19.5" r="1"/></svg></div><div><h3>Shopper</h3><p>Decisión de compra</p></div></div>
+    <ol class="howto rise" aria-label="Cómo usar la escalera">
+      <li><em>1</em><span><b>Tocá un escalón</b>: ordenar, profesionalizar o escalar</span></li>
+      <li><em>2</em><span><b>Fijate si tu compañía</b> se ve así hoy</span></li>
+      <li><em>3</em><span><b>Pasá al siguiente nivel</b> con el botón de abajo</span></li>
+    </ol>
+    <div class="maturity">
+      <div class="stairs" id="stairs" role="toolbar" aria-label="Niveles de madurez">
+        <button type="button" class="lvl" aria-pressed="true"><span class="hd"><small>Nivel 1</small><span>Ordenar</span></span><span class="subs"><i style="height:44px"></i><i style="height:60px"></i><i style="height:76px"></i></span></button>
+        <button type="button" class="lvl" aria-pressed="false"><span class="hd"><small>Nivel 2</small><span>Profesio&shy;nalizar</span></span><span class="subs"><i style="height:112px"></i><i style="height:136px"></i><i style="height:160px"></i></span></button>
+        <button type="button" class="lvl" aria-pressed="false"><span class="hd"><small>Nivel 3</small><span>Escalar</span></span><span class="subs"><i style="height:206px"></i><i style="height:240px"></i><i style="height:274px"></i></span></button>
+      </div>
+      <div class="mat-panel" id="matPanel" aria-live="polite"></div>
     </div>
-    <div class="chain-detail" id="chainDetail">Modelo de <b>Route to Market</b>, segmentación de clientes y política comercial por canal y cluster.</div>
-    <div class="layer rise"><b>Capa digital</b><div class="chips"><span>E-commerce B2B con distribuidores</span><span>Tableros de control</span><span>CRM y maestro de clientes</span><span>Medición de ejecución en tiempo real</span><span>Automatización e IA</span></div></div>
   </div>
 </section>
 
@@ -1096,39 +1121,6 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
   </div>
 </section>
 
-<section class="block" id="casos" aria-labelledby="casos-t">
-  <div class="wrap">
-    <div class="intro rise">
-      <p class="eyebrow">Casos</p>
-      <h2 id="casos-t">Proyectos que dejaron capacidades instaladas</h2>
-      <p>Por confidencialidad no nombramos a los clientes. Sí contamos <strong>el problema</strong>, <strong>lo que hicimos</strong> y <strong>lo que quedó</strong>.</p>
-    </div>
-    <div class="cases">
-      <button type="button" class="case tilt" data-mp4="videos/foodservice.mp4" data-t="Censo nacional del canal Food Service">
-        <span class="thumb" style="--bgc: linear-gradient(90deg, rgba(20,29,56,.94) 0%, rgba(20,29,56,.6) 52%, rgba(20,29,56,.05) 100%), url(videos/foodservice.jpg) right 22% top 40% / 42% auto no-repeat, linear-gradient(150deg, #111318, #3a4470);"><span class="tag">Multinacional de alimentos · Video</span><span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="big">Food Service</span></span>
-        <span class="bd"><h3>Censo nacional del canal Food Service</h3><p>Una multinacional de alimentos, líder en más de 120 países, quería conocer su <strong>potencial real</strong> en gastronomía. En <strong>90 días</strong>: <strong>33 censistas</strong> en la calle, <strong>+20.000 puntos de venta</strong> censados y <strong>1.920 rutas</strong> georreferenciadas, con foto y estado de cada local.</p><span class="out"><b>Resultado:</b> la compañía dimensionó su potencial, redefinió su Route to Market y asignó zonas a cada distribuidor.</span></span>
-      </button>
-      <button type="button" class="case tilt" data-mp4="videos/rotacion.mp4" data-t="Estudio de rotación y fotos de éxito">
-        <span class="thumb" style="--bgc: linear-gradient(90deg, rgba(20,29,56,.94) 0%, rgba(20,29,56,.6) 52%, rgba(20,29,56,.05) 100%), url(videos/rotacion.jpg) right 22% top 40% / 42% auto no-repeat, linear-gradient(150deg, #141d38, #2c5d96);"><span class="tag">Compañía líder de bebidas · Video</span><span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="big">Rotación</span></span>
-        <span class="bd"><h3>Estudio de rotación y fotos de éxito</h3><p>Para aguas, isotónicas, cervezas y vinos, con <strong>alcance regional</strong>, medimos la <strong>rotación real por categoría</strong> y comparamos <strong>dos fotos de éxito</strong> en góndola: planograma actual contra bloque por marca.</p><span class="out"><b>Resultado:</b> miles de datos de rotación, litros y precios en tableros digitales para decidir la exhibición con datos.</span></span>
-      </button>
-      <button type="button" class="case tilt" data-mp4="videos/modelo-comercial.mp4" data-t="Modelo de gestión comercial completo">
-        <span class="thumb" style="--bgc: linear-gradient(90deg, rgba(20,29,56,.94) 0%, rgba(20,29,56,.6) 52%, rgba(20,29,56,.05) 100%), url(videos/modelo-comercial.jpg) right 22% top 40% / 42% auto no-repeat, linear-gradient(150deg, #1d2a4f, #4f7fc0);"><span class="tag">Medicina prepaga · Video</span><span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="big">90 días</span></span>
-        <span class="bd"><h3>Un área comercial construida desde cero en 90 días</h3><p>Para una compañía de medicina prepaga con cobertura nacional armamos la <strong>estructura comercial</strong> (empresas, nuevos afiliados y canal digital), el <strong>playbook</strong>, un <strong>variable por cumplimiento</strong> y rutinas diarias, semanales, quincenales y mensuales.</p><span class="out"><b>Resultado:</b> un equipo que sabe qué hacer y cómo hacerlo, funcionando en 90 días.</span></span>
-      </button>
-      <button type="button" class="case tilt" data-mp4="videos/textil.mp4" data-t="Reestructuración comercial de una empresa textil">
-        <span class="thumb" style="--bgc: linear-gradient(90deg, rgba(20,29,56,.94) 0%, rgba(20,29,56,.6) 52%, rgba(20,29,56,.05) 100%), url(videos/textil.jpg) right 22% top 40% / 42% auto no-repeat, linear-gradient(150deg, #1d2a4f, #6b6fc9);"><span class="tag">Empresa textil argentina · Video</span><span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="big">Textil</span></span>
-        <span class="bd"><h3>Reestructuración comercial: canales especializados</h3><p>Una textil que fabrica, importa y exporta tenía <strong>la facturación concentrada en pocos clientes y pocos vendedores</strong>: todos vendían todo. Analizamos <strong>3 años de ventas</strong>, entrevistamos clientes y visitamos el mercado para diseñar <strong>canales especializados</strong> y una cuenta digital.</p><span class="out"><b>Resultado:</b> crecimiento destrabado en facturación, profundidad de cuentas y mix de productos, con más clientes nuevos.</span></span>
-      </button>
-      <button type="button" class="case tilt wide" data-li="https://www.linkedin.com/feed/update/urn:li:activity:7320848808286801921" data-t="Evaluación de la red de distribuidores">
-        <span class="thumb" style="--bgc: linear-gradient(150deg, #3a4470, #4ea8de);"><span class="tag">Redes de distribución · Video en LinkedIn</span><span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="big">Distribuidores</span></span>
-        <span class="bd"><h3>Evaluación de la red de distribuidores</h3><p>Evaluamos la <strong>eficiencia de cada distribuidor</strong>: capacidad logística, ejecución del equipo comercial y oportunidades de crecimiento.</p><span class="out"><b>Resultado:</b> un plan de crecimiento personalizado para cada socio de la red.</span></span>
-      </button>
-    </div>
-    <div class="cta-band rise"><div><h3>¿Querés resultados como estos?</h3><p>Agendá una reunión de 30 minutos y vemos si podemos ayudarte.</p></div><div class="acts"><a class="btn light" href="#contacto">Agendar una reunión</a><a class="btn wa-btn" href="https://wa.me/5491123745576?text=Hola%20Julio%2C%20te%20escribo%20desde%20juliocardozoferrer.com" target="_blank" rel="noopener">WhatsApp</a></div></div>
-  </div>
-</section>
-
 <section class="block dark" id="herramientas" aria-labelledby="herr-t">
   <div class="wrap">
     <div class="intro rise">
@@ -1165,113 +1157,26 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
   </div>
 </section>
 
-<section class="block" id="alcance" aria-labelledby="bl-t">
-  <div class="wrap">
-    <div class="intro rise">
-      <p class="eyebrow">La receta STM</p>
-      <h2 id="bl-t">Todo lo que sabemos, en una sola mezcla</h2>
-      <p>Datos, Route to Market, Trade Marketing, procesos, equipos y tecnología, más la experiencia de <strong>12 industrias</strong> y <strong>5 países</strong>. Dale a licuar y mirá qué sale.</p>
+<section class="block tint dots" id="sobre" aria-labelledby="sobre-t">
+  <div class="wrap split">
+    <div class="quote-card rise">
+      <p>¿Cuánto valor están dejando de capturar las empresas con las capacidades que ya tienen?</p>
+      <span>La pregunta con la que empieza cada proyecto</span>
     </div>
-    <div class="blend" id="blend">
-      <div class="ings" id="ings">
-        <span class="ing2" style="--c:#4ea8de"><i></i>Datos de mercado</span>
-        <span class="ing2" style="--c:#3a4470"><i></i>Route to Market</span>
-        <span class="ing2" style="--c:#6c7bd1"><i></i>Trade Marketing</span>
-        <span class="ing2" style="--c:#8fb0dc"><i></i>Procesos</span>
-        <span class="ing2" style="--c:#f6c453"><i></i>Equipos</span>
-        <span class="ing2" style="--c:#38c3b8"><i></i>Tecnología e IA</span>
-        <span class="ing2" style="--c:#141d38"><i></i>12 industrias</span>
-        <span class="ing2" style="--c:#a9d4f2"><i></i>5 países</span>
+    <div>
+      <p class="eyebrow">Sobre mí</p>
+      <h2 id="sobre-t" class="slide">Estrategia comercial que se ejecuta</h2>
+      <div class="copy">
+        <p>Soy consultor en <strong>estrategia y transformación comercial</strong> y fundador de <strong>STM LATAM</strong>. Resuelvo los <strong>problemas estructurales</strong> que impiden a una compañía capturar valor en sus canales: <strong>Route to Market</strong>, <strong>Trade Marketing</strong>, <strong>redes de distribuidores</strong> y <strong>reestructuración comercial</strong>, en canal moderno, tradicional y Food Service.</p>
+        <p>Trabajo con <strong>método y en profundidad</strong>, del diagnóstico a la implementación, y me apoyo en <strong>datos, tableros y tecnología</strong> para que cada decisión tenga un número detrás.</p>
+        <p>Cada proyecto tiene que <strong>dejar capacidades instaladas</strong>: procesos que se sostienen, equipos que evolucionan e indicadores que se usan.</p>
       </div>
-      <div class="blend-stage">
-        <svg class="blender" id="blender" viewBox="0 0 600 500" role="img" aria-label="Licuadora que mezcla los conocimientos de STM y sirve el resultado">
-          <defs>
-            <clipPath id="jarClip"><path d="M152 96 H308 L284 372 H176 Z"/></clipPath>
-            <clipPath id="glassClip"><path d="M436 300 H540 L528 450 H448 Z"/></clipPath>
-            <linearGradient id="fuchsia" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff4fa8"/><stop offset="1" stop-color="#b8006a"/></linearGradient>
-          </defs>
-          <ellipse cx="300" cy="474" rx="250" ry="12" fill="rgba(20,29,56,.08)"/>
-          <g class="jarbody">
-            <g clip-path="url(#jarClip)"><g id="layers"></g><rect id="mixFill" x="140" y="372" width="180" height="0" fill="url(#fuchsia)" opacity="0"/><path id="swirl" d="" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="4" stroke-linecap="round" opacity="0"/></g>
-            <path d="M152 96 H308 L284 372 H176 Z" fill="rgba(227,234,245,.35)" stroke="#3a4470" stroke-width="4" stroke-linejoin="round"/>
-            <path d="M170 120 L188 350" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".75"/>
-            <path d="M308 140 C352 150 352 290 296 300" fill="none" stroke="#3a4470" stroke-width="10" stroke-linecap="round"/>
-            <rect x="142" y="78" width="176" height="22" rx="8" fill="#141d38"/>
-            <rect x="210" y="62" width="40" height="18" rx="6" fill="#3a4470"/>
-            <g class="blades"><path d="M206 362 L254 362 M230 340 L230 384" stroke="#141d38" stroke-width="6" stroke-linecap="round"/></g>
-            <path d="M168 372 H292 L306 456 H154 Z" fill="#141d38"/>
-            <circle cx="230" cy="418" r="14" fill="#e6007e"/><circle cx="230" cy="418" r="5" fill="#fff"/>
-          </g>
-          <g id="drops"></g>
-          <path id="stream" d="M312 104 C380 70 470 140 488 300" fill="none" stroke="url(#fuchsia)" stroke-width="12" stroke-linecap="round" stroke-dasharray="420" stroke-dashoffset="420" opacity="0"/>
-          <g clip-path="url(#glassClip)"><rect id="glassFill" x="430" y="450" width="120" height="0" fill="url(#fuchsia)"/></g>
-          <path d="M436 300 H540 L528 450 H448 Z" fill="rgba(227,234,245,.3)" stroke="#3a4470" stroke-width="4" stroke-linejoin="round"/>
-          <path d="M448 312 L456 440" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".7"/>
-          <text id="glassLab" x="488" y="285" text-anchor="middle" class="glab" opacity="0">Tu resultado</text>
-        </svg>
-        <div class="blend-ctrl">
-          <p class="blend-status" id="blendStatus" aria-live="polite">8 ingredientes listos</p>
-          <button type="button" class="btn blend-btn" id="blendBtn">Licuar</button>
-        </div>
-      </div>
-    </div>
-    <div class="blend-out" id="blendOut">
-      <div class="blend-res">
-        <span class="k">Servido</span>
-        <h3>Crecimiento con método</h3>
-        <p>Un plan ejecutable, un equipo que sabe qué hacer y resultados que se miden. Así se ve <strong>la consultoría cuando todo se mezcla bien</strong>.</p>
-      </div>
-      <div class="blend-ex">
-        <span class="k">Qué aporta cada ingrediente</span>
-        <ul>
-          <li><b>Datos y tecnología:</b> decisiones con un número detrás.</li>
-          <li><b>Route to Market y Trade Marketing:</b> la estrategia llega a la góndola.</li>
-          <li><b>Procesos y equipos:</b> capacidades que quedan instaladas.</li>
-          <li><b>12 industrias y 5 países:</b> soluciones probadas que aceleran a tu compañía.</li>
-        </ul>
-      </div>
+      <div class="actions"><a class="btn outline" href="https://www.linkedin.com/in/julio10" rel="me noopener">Ver perfil en LinkedIn</a></div>
     </div>
   </div>
 </section>
 
-<section class="block" id="videos" style="padding-top: 0;" aria-labelledby="videos-t">
-  <div class="wrap">
-    <div class="intro rise">
-      <p class="eyebrow">Videos y notas</p>
-      <h2 id="videos-t">Ideas para ejecutar mejor, contadas desde adentro de los proyectos</h2>
-      <p>Proyectos, herramientas y lanzamientos de STM LATAM, contados en menos de un minuto.</p>
-    </div>
-    <div class="videos">
-      <button type="button" class="vcard rise" style="--bgc: linear-gradient(0deg, rgba(17,19,24,.97) 0%, rgba(17,19,24,.78) 45%, rgba(17,19,24,.25) 100%), url(videos/plan2027.jpg) center 25% / cover no-repeat;" data-mp4="videos/plan2027.mp4" data-t="Tu plan 2027 ya tiene números. ¿Pero tiene el cómo?">
-        <span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span>
-        <span class="tag">Workshop · Planificación 2027</span>
-        <h3>Tu plan 2027 ya tiene números. ¿Pero tiene el cómo?</h3>
-      </button>
-      <button type="button" class="vcard rise" style="--bgc: linear-gradient(0deg, rgba(17,19,24,.97) 0%, rgba(17,19,24,.78) 45%, rgba(17,19,24,.25) 100%), url(videos/nubbi.jpg) center 25% / cover no-repeat;" data-mp4="videos/nubbi.mp4" data-t="Nubbi: toda tu red de distribuidores conectada">
-        <span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span>
-        <span class="tag">Nubbi · Para la compañía</span>
-        <h3>Toda tu red de distribuidores, conectada</h3>
-      </button>
-      <button type="button" class="vcard rise" style="--bgc: linear-gradient(0deg, rgba(17,19,24,.97) 0%, rgba(17,19,24,.78) 45%, rgba(17,19,24,.25) 100%), url(videos/distribuidores.jpg) center 25% / cover no-repeat;" data-mp4="videos/distribuidores.mp4" data-t="Nubbi para distribuidores y mayoristas">
-        <span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span>
-        <span class="tag">Nubbi · Distribuidores</span>
-        <h3>¿Querés que tus clientes te pidan más seguido?</h3>
-      </button>
-      <button type="button" class="vcard rise" style="--bgc: linear-gradient(0deg, rgba(17,19,24,.97) 0%, rgba(17,19,24,.78) 45%, rgba(17,19,24,.25) 100%), url(videos/nubbi2027.jpg) center 25% / cover no-repeat;" data-mp4="videos/nubbi2027.mp4" data-t="2027 está a la vuelta de la esquina">
-        <span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span>
-        <span class="tag">Nubbi · 2027</span>
-        <h3>2027 está a la vuelta de la esquina</h3>
-      </button>
-      <button type="button" class="vcard rise" style="--bgc: linear-gradient(150deg, #3a4470, #4ea8de);" data-li="https://www.linkedin.com/feed/update/urn:li:activity:7463204488741543937" data-t="ECO: el ecosistema para evaluar y valorizar redes de distribuidores">
-        <span class="big">ECO</span>
-        <span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span>
-        <span class="tag">Lanzamiento · Video en LinkedIn</span>
-        <h3>ECO: evaluar, valorizar y potenciar tu red</h3>
-      </button>
-    </div>
-    <div class="actions" style="justify-content:center"><a class="btn outline" href="https://www.linkedin.com/in/julio10/recent-activity/videos/" rel="noopener">Ver todos los videos en LinkedIn</a></div>
-  </div>
-</section>
+</div>
 
 <section class="block" id="contacto" style="padding-top: 0;" aria-labelledby="contacto-t">
   <div class="wrap">
@@ -1732,6 +1637,16 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
       var step = function () { if (k < ings.length) { var i = k++; addOne(i, step); } else blendIt(function () { serve(function () { out.classList.add('on'); st.innerHTML = '<b>Listo.</b> Crecimiento con método, servido.'; btn.disabled = false; btn.textContent = 'Licuar de nuevo'; busy = false; }); }); };
       step();
     });
+  })();
+
+  /* ---------- Ver más ---------- */
+  (function () {
+    var btn = $('masBtn'), body = $('masBody'); if (!btn || !body) return;
+    var open = function (o) { body.hidden = !o; btn.setAttribute('aria-expanded', o ? 'true' : 'false'); btn.textContent = o ? 'Ver menos' : 'Ver más'; };
+    btn.addEventListener('click', function () { var o = body.hidden; open(o); if (o) body.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    var check = function (h) { if (h && body.querySelector(h)) { open(true); setTimeout(function () { var t = document.querySelector(h); if (t) t.scrollIntoView({ block: 'start' }); }, 30); } };
+    document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href^="#"]'); if (a) check(a.getAttribute('href')); });
+    check(location.hash);
   })();
 
   /* ---------- Menú ---------- */
