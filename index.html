@@ -183,7 +183,7 @@ section.block { padding: clamp(64px, 8vw, 112px) 0; }
 
 /* Franja de empresas */
 .marquee { background: var(--navy); color: #fff; overflow: hidden; padding: 24px 0; display: flex; align-items: center; }
-.marquee .lab { flex: none; position: relative; z-index: 2; background: var(--navy); padding: 0 28px 0 var(--gutter); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--sky-soft); box-shadow: 24px 0 24px var(--navy); }
+.marquee .lab { text-decoration: none; flex: none; position: relative; z-index: 2; background: var(--navy); padding: 0 28px 0 var(--gutter); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--sky-soft); box-shadow: 24px 0 24px var(--navy); }
 .marquee .track { overflow: hidden; flex: 1; }
 .marquee .row { display: flex; align-items: center; gap: 52px; width: max-content; animation: slide 60s linear infinite; }
 .marquee:hover .row { animation-play-state: paused; }
@@ -622,6 +622,30 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
 .more-box p:not(.eyebrow) { margin: 10px 0 0; color: var(--muted); max-width: 56ch; }
 .more-cta { padding-bottom: clamp(24px, 3vw, 40px); }
 
+/* Formulario de contacto */
+.contact { align-items: start !important; }
+.contact dl { margin-top: 26px !important; }
+.cform { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; background: #fff; border-radius: var(--r); padding: clamp(20px, 2.6vw, 30px); box-shadow: 0 14px 36px rgba(17,19,24,.06); }
+.cform label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; }
+.cform label.full, .cform .legal, .cform .fbtns { grid-column: 1 / -1; }
+.cform input, .cform textarea { font: 400 16px var(--font); color: var(--text); padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: #fff; width: 100%; }
+.cform textarea { min-height: 96px; resize: vertical; }
+.cform input:focus, .cform textarea:focus { outline: 2px solid var(--sky); border-color: transparent; }
+.cform .hp { display: none; }
+.cform .legal { font-size: 13px; color: var(--muted); margin: 0; }
+.cform .fbtns { display: flex; flex-wrap: wrap; gap: 10px; }
+@media (max-width: 640px) { .cform { grid-template-columns: 1fr; } .cform .fbtns .btn { flex: 1 1 100%; justify-content: center; } }
+
+/* Preguntas frecuentes */
+.faq { max-width: 860px; margin: 0 auto; display: grid; gap: 10px; }
+.faq details { background: var(--card); border-radius: 16px; padding: 4px 22px; }
+.faq summary { cursor: pointer; list-style: none; font-size: 18px; font-weight: 600; padding: 16px 30px 16px 0; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 0; top: 12px; font-size: 26px; font-weight: 400; color: var(--accent); transition: transform .25s ease; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { margin: 0 0 18px; color: var(--muted); }
+footer nav { display: flex; flex-wrap: wrap; gap: 16px; }
+
 /* Instrucciones de uso */
 .howto { list-style: none; margin: 0 auto 26px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; max-width: 980px; }
 .howto li { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; background: var(--tint); font-size: 14.5px; line-height: 1.35; color: var(--muted); }
@@ -716,6 +740,63 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
   .js .rise, .js .slide, .js .tilt { transform: none; opacity: 1; }
 }
 </style>
+<script src="assets/medicion.js" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "¿Qué problemas resuelve Julio Cardozo Ferrer?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Ayudo a empresas a vender más con lo que ya tienen: canales y distribuidores que no llegan a todos los clientes, ejecución en el punto de venta que no se ve en la góndola y equipos comerciales sin procesos, metas ni seguimiento. Lo hago desde STM LATAM, con proyectos de Route to Market, Trade Marketing y reestructuración comercial."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "¿Con qué tipo de empresas trabajan?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Con multinacionales, pymes y distribuidoras de distintas industrias: bebidas, alimentos, farma y dermocosmética, textil, salud, educación y distribución, entre otras. Algunas marcas que confiaron en STM son CCU, Unilever, ISDIN, Froneri y Grupo Peñaflor."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "¿En qué países trabajan?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Trabajamos en Argentina, Chile, México, Ecuador y Paraguay."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "¿Cuánto dura un proyecto?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Depende del alcance. Varios de los proyectos que mostramos en los casos, como el censo del canal Food Service o el área comercial de una prepaga, se implementaron en alrededor de 90 días."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "¿Qué es un workshop de diagnóstico?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Es una sesión de trabajo con tu equipo en la que miramos tus datos, medimos dónde se escapa el valor comercial y priorizamos qué resolver primero. Es la mejor forma de empezar."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "¿Cómo empezamos?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Escribime por WhatsApp o completá el formulario contándome qué querés resolver. Te respondo en menos de 24 horas hábiles y coordinamos una primera reunión."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -785,7 +866,7 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
 </section>
 
 <div class="marquee" aria-label="Empresas que confían en STM">
-  <span class="lab">Confían en STM</span>
+  <a class="lab" href="https://www.stmlatam.com/" rel="noopener">Confían en STM</a>
   <div class="track"><div class="row" id="mqRow" aria-hidden="true"></div></div>
 </div>
 
@@ -1171,27 +1252,56 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
         <p>Trabajo con <strong>método y en profundidad</strong>, del diagnóstico a la implementación, y me apoyo en <strong>datos, tableros y tecnología</strong> para que cada decisión tenga un número detrás.</p>
         <p>Cada proyecto tiene que <strong>dejar capacidades instaladas</strong>: procesos que se sostienen, equipos que evolucionan e indicadores que se usan.</p>
       </div>
-      <div class="actions"><a class="btn outline" href="https://www.linkedin.com/in/julio10" rel="me noopener">Ver perfil en LinkedIn</a></div>
+      <div class="actions"><a class="btn solid" href="https://www.stmlatam.com/" rel="noopener">Conocé STM LATAM</a><a class="btn outline" href="https://www.linkedin.com/in/julio10" rel="me noopener">Ver perfil en LinkedIn</a></div>
     </div>
   </div>
 </section>
 
 </div>
 
+<section class="block" id="preguntas" aria-labelledby="faq-t">
+  <div class="wrap">
+    <div class="intro rise">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2 id="faq-t">Lo que suelen preguntarme antes de empezar</h2>
+    </div>
+    <div class="faq">
+      <details><summary>¿Qué problemas resuelve Julio Cardozo Ferrer?</summary><p>Ayudo a empresas a vender más con lo que ya tienen: canales y distribuidores que no llegan a todos los clientes, ejecución en el punto de venta que no se ve en la góndola y equipos comerciales sin procesos, metas ni seguimiento. Lo hago desde STM LATAM, con proyectos de Route to Market, Trade Marketing y reestructuración comercial.</p></details>
+      <details><summary>¿Con qué tipo de empresas trabajan?</summary><p>Con multinacionales, pymes y distribuidoras de distintas industrias: bebidas, alimentos, farma y dermocosmética, textil, salud, educación y distribución, entre otras. Algunas marcas que confiaron en STM son CCU, Unilever, ISDIN, Froneri y Grupo Peñaflor.</p></details>
+      <details><summary>¿En qué países trabajan?</summary><p>Trabajamos en Argentina, Chile, México, Ecuador y Paraguay.</p></details>
+      <details><summary>¿Cuánto dura un proyecto?</summary><p>Depende del alcance. Varios de los proyectos que mostramos en los casos, como el censo del canal Food Service o el área comercial de una prepaga, se implementaron en alrededor de 90 días.</p></details>
+      <details><summary>¿Qué es un workshop de diagnóstico?</summary><p>Es una sesión de trabajo con tu equipo en la que miramos tus datos, medimos dónde se escapa el valor comercial y priorizamos qué resolver primero. Es la mejor forma de empezar.</p></details>
+      <details><summary>¿Cómo empezamos?</summary><p>Escribime por WhatsApp o completá el formulario contándome qué querés resolver. Te respondo en menos de 24 horas hábiles y coordinamos una primera reunión.</p></details>
+    </div>
+  </div>
+</section>
+
 <section class="block" id="contacto" style="padding-top: 0;" aria-labelledby="contacto-t">
   <div class="wrap">
     <div class="contact">
       <div>
         <h2 id="contacto-t">Hablemos de tu próximo proyecto comercial</h2>
-        <p class="lead">Si querés trabajar una idea con tu equipo, armamos un <strong>workshop</strong> para analizarla juntos.</p>
-        <div class="actions"><a class="btn wa-btn" href="https://wa.me/5491123745576?text=Hola%20Julio%2C%20te%20escribo%20desde%20juliocardozoferrer.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Escribime por WhatsApp</a><a class="btn solid" href="mailto:jcardozo@stmlatam.com?subject=Consulta%20desde%20juliocardozoferrer.com">Escribirme por mail</a></div>
+        <p class="lead">Contame qué querés resolver y te respondo en menos de 24 horas hábiles. Si tiene sentido, armamos un <strong>workshop</strong> con tu equipo para analizarlo juntos.</p>
+        <dl>
+          <dt>WhatsApp</dt><dd><a href="https://wa.me/5491123745576?text=Hola%20Julio%2C%20te%20escribo%20desde%20juliocardozoferrer.com" target="_blank" rel="noopener" data-track="contacto">+54 9 11 2374-5576</a></dd>
+          <dt>Email</dt><dd><a href="mailto:jcardozo@stmlatam.com">jcardozo@stmlatam.com</a></dd>
+          <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/julio10" rel="me noopener">linkedin.com/in/julio10</a></dd>
+          <dt>Consultora</dt><dd><a href="https://www.stmlatam.com/" rel="noopener">stmlatam.com</a></dd>
+        </dl>
       </div>
-      <dl>
-        <dt>Email</dt><dd><a href="mailto:jcardozo@stmlatam.com">jcardozo@stmlatam.com</a></dd>
-        <dt>WhatsApp</dt><dd><a href="https://wa.me/5491123745576?text=Hola%20Julio%2C%20te%20escribo%20desde%20juliocardozoferrer.com" target="_blank" rel="noopener">+54 9 11 2374-5576</a></dd>
-        <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/julio10" rel="me noopener">linkedin.com/in/julio10</a></dd>
-        <dt>Consultora</dt><dd><a href="https://www.stmlatam.com/" rel="noopener">stmlatam.com</a></dd>
-      </dl>
+      <form class="cform" name="contacto" method="POST" action="/gracias.html" data-netlify="true" netlify-honeypot="empresa-web">
+        <input type="hidden" name="form-name" value="contacto">
+        <p class="hp"><label>No completar <input name="empresa-web"></label></p>
+        <label>Nombre y apellido<input name="nombre" autocomplete="name" required></label>
+        <label>Empresa<input name="empresa" autocomplete="organization" required></label>
+        <label>Cargo<input name="cargo" autocomplete="organization-title"></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
+        <label class="full">WhatsApp o teléfono<input type="tel" name="telefono" autocomplete="tel"></label>
+        <label class="full">¿Qué querés resolver?<textarea name="mensaje" placeholder="Ej.: nuestros distribuidores no llegan a todos los clientes" required></textarea></label>
+        <input type="hidden" name="origen"><input type="hidden" name="campana">
+        <p class="legal">Uso tus datos solo para responderte. <a href="/privacidad.html">Política de privacidad</a>.</p>
+        <div class="fbtns"><button type="submit" class="btn solid">Enviar consulta</button><a class="btn wa-btn" href="https://wa.me/5491123745576?text=Hola%20Julio%2C%20te%20escribo%20desde%20juliocardozoferrer.com" target="_blank" rel="noopener" data-track="contacto-boton"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>WhatsApp</a></div>
+      </form>
     </div>
   </div>
 </section>
@@ -1200,8 +1310,8 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Julio Cardozo Ferrer · Buenos Aires, Argentina</span>
-    <span>Founder &amp; Director de <a href="https://www.stmlatam.com/">STM LATAM</a></span>
+    <span>© 2026 Julio Cardozo Ferrer · Buenos Aires, Argentina · Founder &amp; Director de <a href="https://www.stmlatam.com/" rel="noopener">STM LATAM</a></span>
+    <nav aria-label="Más páginas"><a href="/blog/">Blog</a><a href="/workshop-diagnostico-comercial.html">Workshop de diagnóstico</a><a href="/privacidad.html">Privacidad</a></nav>
   </div>
 </footer>
 
@@ -1637,6 +1747,14 @@ body:has(.fw-panel.open) .float-cta, body:has(.vmodal.open) .float-cta, body:has
       var step = function () { if (k < ings.length) { var i = k++; addOne(i, step); } else blendIt(function () { serve(function () { out.classList.add('on'); st.innerHTML = '<b>Listo.</b> Crecimiento con método, servido.'; btn.disabled = false; btn.textContent = 'Licuar de nuevo'; busy = false; }); }); };
       step();
     });
+  })();
+
+  /* ---------- Origen de la consulta ---------- */
+  (function () {
+    var f = document.querySelector('form.cform'); if (!f) return;
+    var g = function (k) { try { return sessionStorage.getItem('jcf_' + k) || ''; } catch (e) { return ''; } };
+    f.origen.value = [g('utm_source'), g('utm_medium'), g('gclid') ? 'gclid' : '', g('fbclid') ? 'fbclid' : ''].filter(Boolean).join(' / ') || 'directo';
+    f.campana.value = g('utm_campaign');
   })();
 
   /* ---------- Ver más ---------- */
