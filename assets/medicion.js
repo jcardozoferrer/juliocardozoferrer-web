@@ -7,7 +7,7 @@
    Mientras estén vacíos, el sitio funciona igual y no se mide nada.
    ───────────────────────────────────────────────────────────── */
 window.JCF_MEDICION = {
-  ga4: '',
+  ga4: 'G-T5BQLG66BM',
   metaPixel: '',
   googleAds: ''
 };
