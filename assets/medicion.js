@@ -54,7 +54,7 @@ window.JCF_MEDICION = {
     var h = a.getAttribute('href') || '';
     if (h.indexOf('wa.me') > -1) jcfTrack('contact_whatsapp', { location: a.dataset.track || location.pathname });
     else if (h.indexOf('mailto:') === 0) jcfTrack('contact_email', { location: location.pathname });
-    else if (h === '#contacto' || h.indexOf('workshop') > -1) jcfTrack('schedule_click', { label: a.textContent.trim().slice(0, 60) });
+    else if (a.hasAttribute('data-book') || h === '#contacto' || h.indexOf('workshop') > -1) jcfTrack('schedule_click', { label: a.textContent.trim().slice(0, 60) });
   });
 
   /* Aviso de cookies: la medición se carga solo si la persona acepta */
